@@ -1,4 +1,4 @@
-class Board {
+export class Board {
   constructor ( size ) {
     this.size = size;
     for ( let index = 0; index < this.size; index++ ) {
@@ -52,22 +52,22 @@ class Board {
   }
 }
 
-const num = 4;
-const fourByFour = new Board( num );
+// const num = 4;
+// const fourByFour = new Board( num );
 
-for (let index = 0; index < num; index++) {
-  console.dir(`[ ${fourByFour[index]} ]`);
-}
-console.dir("----------------------------");
+// for (let index = 0; index < num; index++) {
+//   console.dir(`[ ${fourByFour[index]} ]`);
+// }
+// console.dir("----------------------------");
 // fourByFour.move( "left" );
 // fourByFour.move( "right" );
 // fourByFour.move( "down" );
 // fourByFour.move( "up" );
-fourByFour.moveNeighbour( 1 );
-fourByFour.moveNeighbour( 5 );
-fourByFour.moveNeighbour( 9 );
-fourByFour.moveNeighbour( 10 );
+// fourByFour.moveNeighbour( 1 );
+// fourByFour.moveNeighbour( 5 );
+// fourByFour.moveNeighbour( 9 );
+// fourByFour.moveNeighbour( 10 );
 
-for (let index = 0; index < num; index++) {
-  console.dir(`[ ${fourByFour[index]} ]`);
-}
+// for (let index = 0; index < num; index++) {
+//   console.dir(`[ ${fourByFour[index]} ]`);
+// }

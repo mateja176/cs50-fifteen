@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  main {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    section {
+      width: 50vw;
+      height: 50vw;
+      background: lightgrey;
+      display: grid;
+      grid-gap: .3em;
+      border: .3em solid lightgrey;
+      div {
+        background: lightgoldenrodyellow;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+      }
+    }
+  }
+}
+.tile0 {
+  visibility: hidden;
+}

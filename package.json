@@ -1,0 +1,20 @@
+{
+  "name": "cs50-fifteen",
+  "version": "0.1.0",
+  "description": "CS50 Fifteen",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/index.scss src/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mytee306/cs50-fifteen.git"
+  },
+  "keywords": [],
+  "author": "Mateja Petrovic <mateja176@gmail.com> (https://github.com/mytee306)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mytee306/cs50-fifteen/issues"
+  },
+  "homepage": "https://github.com/mytee306/cs50-fifteen#readme"
+}

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+}
+body main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+body main section {
+  width: 50vw;
+  height: 50vw;
+  background: lightgrey;
+  display: grid;
+  grid-gap: 0.3em;
+  border: 0.3em solid lightgrey;
+}
+body main section div {
+  background: lightgoldenrodyellow;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.tile0 {
+  visibility: hidden;
+}
