@@ -9,10 +9,10 @@ body {
     grid-template-rows: auto 1fr;
     justify-items: center;
     .manual {
-      margin: 3em 0;
+      margin: 1em 0;
       text-align: center;
       h1, p {
-        margin: 0;
+        margin: .5em 0;
         padding: 0;
       }
     }

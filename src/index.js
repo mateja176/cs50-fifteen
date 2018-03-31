@@ -71,4 +71,9 @@ document.querySelectorAll("div").forEach(div => {
       update( num );
     }
   } );
-});
+} );
+
+const shuffle = document.querySelector( "button" );
+shuffle.addEventListener( "click", () => {
+  location.reload();
+} );

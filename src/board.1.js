@@ -31,8 +31,6 @@ export class Board {
       default:
         break;
     }
-    // console.dir(this.zeroRow);
-    // console.dir(this.zeroColumn);
   }
   moveNeighbour (num) {
     if (this.zeroColumn + 1 < this.size && this[this.zeroRow][this.zeroColumn + 1] == num) {
