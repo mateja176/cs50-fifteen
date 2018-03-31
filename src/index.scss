@@ -4,9 +4,10 @@ body {
   width: 100vw;
   height: 100vh;
   display: grid;
+  grid-template-rows: auto 1fr;
   main {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
     justify-items: center;
     .manual {
       margin: 1em 0;
@@ -34,8 +35,20 @@ body {
       }
     }
   }
+  footer {
+    display: grid;
+    justify-items: center;
+    align-items: flex-start;
+    p, span {
+      display: inline-block;
+    }
+  }
 }
 
 [data-display = "hidden"] {
   visibility: hidden;
+}
+
+[data-solved = "true"] {
+  background: palegreen !important;
 }

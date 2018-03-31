@@ -48,3 +48,7 @@ body footer p, body footer span {
 [data-display=hidden] {
   visibility: hidden;
 }
+
+[data-solved=true] {
+  background: palegreen !important;
+}

@@ -19,9 +19,6 @@ for ( let index = 0; index < num; index++ ) {
 
 board.setAttribute("style", `grid-template-columns: repeat(${num}, auto);`);
 
-// Single update
-// [divZero.innerHTML, divNum.innerHTML] = [divNum.innerHTML, divZero.innerHTML];
-
 const update = ( num ) => {
   let zeroFirst = false;
   document.querySelectorAll( "div" ).forEach( div => {
@@ -65,6 +62,19 @@ const clickCounter = () => {
   clicks.innerHTML++;
 };
 
+const solutionCheck = () => {
+  const biggest = fourByFour.size ** 2 - 1;
+  document.querySelectorAll( "div" ).forEach( (div, i) => {
+    const cls = div.classList;
+    const ordinalStr = cls.toString().match( /\d+/ )[ 0 ];
+    const ordinal = Number(ordinalStr);
+    const html = Number( div.innerHTML );
+    if ((html + ordinal) === biggest && ordinal !== 15) {
+      div.setAttribute( "data-solved", "true" );
+    }
+  } );
+};
+
 document.querySelectorAll("div").forEach(div => {
   div.addEventListener( "click", () => {
     const numStr = div.innerHTML;
@@ -75,6 +85,7 @@ document.querySelectorAll("div").forEach(div => {
     } else {
       update( num );
       clickCounter();
+      solutionCheck();
     }
   } );
 } );
