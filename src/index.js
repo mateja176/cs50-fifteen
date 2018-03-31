@@ -14,19 +14,35 @@ for ( let index = 0; index < num; index++ ) {
   }
 }
 
-// let initialBoard = "";
-// for (let index = 0; index < num; index++) {
-//   initialBoard += (`[ ${fourByFour[index]} ]<br>`);
-// }
-// initialBoard += "----------------------------<br>";
-// fourByFour.move( "left" );
-// fourByFour.moveNeighbour( 1 );
-
 board.setAttribute("style", `grid-template-columns: repeat(${num}, auto);`);
 
-// document.querySelectorAll("div").forEach(div => {
-//   div.addEventListener( "click", () => {
-//     const num = div.classList.match( /\d+/ );
-//     update(fourByFour.moveNeighbour( num ););
-//   } );
-// });
+const update = (num) => {
+  document.querySelectorAll( "div" ).forEach( div => {
+    if (div.innerHTML === num) {
+      div.innerHTML = 0;
+    }
+  } );
+};
+
+const updateZero = (num) => {
+  document.querySelectorAll("div").forEach(div => {
+    if ( div.innerHTML === 0 ) {
+      div.innerHTML = num;
+      return;
+    }
+  });
+};
+
+document.querySelectorAll("div").forEach(div => {
+  div.addEventListener( "click", () => {
+    const cls = div.classList.toString();
+    const num = cls.match( /\d+/ )[ 0 ];
+    console.dir(num);
+    const swappedNum = fourByFour.moveNeighbour( num );
+    console.dir(swappedNum);
+    if (swappedNum) {
+      update( num );
+      updateZero( num );
+    }
+  } );
+});

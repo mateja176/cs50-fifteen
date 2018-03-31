@@ -36,38 +36,18 @@ export class Board {
     switch (num) {
       case this[ this.zeroRow ][ this.zeroColumn + 1 ]:
         this.move( "left" );
-        break;
+        return num;
       case this[this.zeroRow][this.zeroColumn - 1]:
         this.move("right");
-        break;
+        return num;
       case this[this.zeroRow + 1][this.zeroColumn]:
         this.move("down");
-        break;
+        return num;
       case this[this.zeroRow - 1][this.zeroColumn]:
         this.move("up");
-        break;
+        return num;
       default:
-        break;
+        return "Number is not a neighbour";
     }
   }
 }
-
-// const num = 4;
-// const fourByFour = new Board( num );
-
-// for (let index = 0; index < num; index++) {
-//   console.dir(`[ ${fourByFour[index]} ]`);
-// }
-// console.dir("----------------------------");
-// fourByFour.move( "left" );
-// fourByFour.move( "right" );
-// fourByFour.move( "down" );
-// fourByFour.move( "up" );
-// fourByFour.moveNeighbour( 1 );
-// fourByFour.moveNeighbour( 5 );
-// fourByFour.moveNeighbour( 9 );
-// fourByFour.moveNeighbour( 10 );
-
-// for (let index = 0; index < num; index++) {
-//   console.dir(`[ ${fourByFour[index]} ]`);
-// }
