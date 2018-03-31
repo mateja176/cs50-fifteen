@@ -6,21 +6,36 @@ body {
   display: grid;
   main {
     display: grid;
-    align-items: center;
+    grid-template-rows: auto 1fr;
     justify-items: center;
-    section {
-      width: 50vw;
-      height: 50vw;
+    .manual {
+      margin: 3em 0;
+      text-align: center;
+      h1, p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .board {
+      width: 50vh;
+      height: 50vh;
       background: lightgrey;
       display: grid;
       grid-gap: .3em;
       border: .3em solid lightgrey;
       div {
+        min-width: 3em;
+        min-width: 3em;
         background: lightgoldenrodyellow;
         display: grid;
         align-items: center;
         justify-items: center;
+        cursor: pointer;
       }
     }
   }
+}
+
+[data-display = "hidden"] {
+  visibility: hidden;
 }

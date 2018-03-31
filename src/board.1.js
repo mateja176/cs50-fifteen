@@ -31,17 +31,17 @@ export class Board {
       default:
         break;
     }
-    console.dir(this.zeroRow);
-    console.dir(this.zeroColumn);
+    // console.dir(this.zeroRow);
+    // console.dir(this.zeroColumn);
   }
   moveNeighbour (num) {
-    if (this.zeroColumn + 1 <= this.size && this[this.zeroRow][this.zeroColumn + 1] == num) {
+    if (this.zeroColumn + 1 < this.size && this[this.zeroRow][this.zeroColumn + 1] == num) {
       this.move("left");
       return num;
     } else if (this.zeroColumn - 1 >= 0 && this[this.zeroRow][this.zeroColumn - 1] == num) {
       this.move("right");
       return num;
-    } else if (this.zeroRow + 1 <= this.size && this[this.zeroRow + 1][this.zeroColumn] == num) {
+    } else if (this.zeroRow + 1 < this.size && this[this.zeroRow + 1][this.zeroColumn] == num) {
       this.move("down");
       return num;
     } else if (this.zeroRow - 1 >= 0 && this[this.zeroRow - 1][this.zeroColumn] == num) {

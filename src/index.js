@@ -8,6 +8,9 @@ const board = document.querySelector( ".board" );
 for ( let index = 0; index < num; index++ ) {
   for (let i = 0; i < num; i++) {
     const div = document.createElement( "div" );
+    if ( fourByFour[ index ][ i ] === 0 ) {
+      div.setAttribute( "data-display", "hidden" );
+    }
     div.innerHTML = fourByFour[ index ][ i ];
     div.className = `tile${document.querySelectorAll("div").length}`;
     board.appendChild( div );
@@ -18,18 +21,43 @@ board.setAttribute("style", `grid-template-columns: repeat(${num}, auto);`);
 
 // Single update
 // [divZero.innerHTML, divNum.innerHTML] = [divNum.innerHTML, divZero.innerHTML];
+
 const update = ( num ) => {
-  for (let index = 0; index < document.querySelectorAll( "div" ).length; index++) {
-    if (document.querySelectorAll( "div" )[index].innerHTML == num) {
-      document.querySelectorAll( "div" )[ index ].innerHTML = 0;
+  let zeroFirst = false;
+  document.querySelectorAll( "div" ).forEach( div => {
+    if (div.innerHTML == num || div.innerHTML == 0) {
+      if ( div.innerHTML == num ) {
+        div.innerHTML = 0;
+        div.setAttribute("data-display", "hidden");
+      } else {
+        zeroFirst = true;
+        div.innerHTML = num;
+        div.removeAttribute( "data-display" );
+      }
     }
-  }
-  for (let index = 0; index < document.querySelectorAll( "div" ).length; index++) {
-    if (document.querySelectorAll( "div" )[index].innerHTML == 0) {
-      document.querySelectorAll( "div" )[ index ].innerHTML = num;
-      return;
+  } );
+  let secondOccurance = false;
+  document.querySelectorAll( "div" ).forEach( div => {
+    if (zeroFirst) {
+      if (div.innerHTML == num) {
+        if (secondOccurance == false) {
+          secondOccurance = true;
+        } else {
+          div.innerHTML = 0;
+          div.setAttribute("data-display", "hidden");
+        }
+      }
+    } else {
+      if (div.innerHTML == 0) {
+        if (secondOccurance == false) {
+          secondOccurance = true;
+        } else {
+          div.innerHTML = num;
+          div.removeAttribute("data-display");
+        }
+      }
     }
-  }
+  } );
 };
 
 document.querySelectorAll("div").forEach(div => {
@@ -40,7 +68,7 @@ document.querySelectorAll("div").forEach(div => {
     if ( typeof swappedNum != "number" ) {
       console.dir( swappedNum );
     } else {
-      update(num);
+      update( num );
     }
   } );
 });

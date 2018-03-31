@@ -7,20 +7,35 @@ body {
 }
 body main {
   display: grid;
-  align-items: center;
+  grid-template-rows: auto 1fr;
   justify-items: center;
 }
-body main section {
-  width: 50vw;
-  height: 50vw;
+body main .manual {
+  margin: 3em 0;
+  text-align: center;
+}
+body main .manual h1, body main .manual p {
+  margin: 0;
+  padding: 0;
+}
+body main .board {
+  width: 50vh;
+  height: 50vh;
   background: lightgrey;
   display: grid;
   grid-gap: 0.3em;
   border: 0.3em solid lightgrey;
 }
-body main section div {
+body main .board div {
+  min-width: 3em;
+  min-width: 3em;
   background: lightgoldenrodyellow;
   display: grid;
   align-items: center;
   justify-items: center;
+  cursor: pointer;
+}
+
+[data-display=hidden] {
+  visibility: hidden;
 }
