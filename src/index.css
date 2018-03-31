@@ -4,10 +4,11 @@ body {
   width: 100vw;
   height: 100vh;
   display: grid;
+  grid-template-rows: auto 1fr;
 }
 body main {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   justify-items: center;
 }
 body main .manual {
@@ -34,6 +35,14 @@ body main .board div {
   align-items: center;
   justify-items: center;
   cursor: pointer;
+}
+body footer {
+  display: grid;
+  justify-items: center;
+  align-items: flex-start;
+}
+body footer p, body footer span {
+  display: inline-block;
 }
 
 [data-display=hidden] {

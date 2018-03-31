@@ -60,6 +60,11 @@ const update = ( num ) => {
   } );
 };
 
+const clickCounter = () => {
+  const clicks = document.querySelector( ".clicks" );
+  clicks.innerHTML++;
+};
+
 document.querySelectorAll("div").forEach(div => {
   div.addEventListener( "click", () => {
     const numStr = div.innerHTML;
@@ -69,6 +74,7 @@ document.querySelectorAll("div").forEach(div => {
       console.dir( swappedNum );
     } else {
       update( num );
+      clickCounter();
     }
   } );
 } );
