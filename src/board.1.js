@@ -9,18 +9,6 @@ export class Board {
     }
     this.zeroRow = 0;
     this.zeroColumn = 0;
-    if (this.zeroColumn + 1 <= this.size) {
-      this.left = this[ this.zeroRow ][this.zeroColumn + 1];
-    }
-    if (this.zeroColumn - 1 >= 0) {
-      this.right = this[ this.zeroRow ][this.zeroColumn - 1];
-    }
-    if (this.zeroRow + 1 <= this.size) {
-      this.down = this[this.zeroRow + 1][this.zeroColumn];
-    }
-    if (this.zeroRow - 1 >= 0) {
-      this.up = this[ this.zeroRow - 1][this.zeroColumn];
-    }
   }
   move ( direction ) {
     switch (direction) {
@@ -43,19 +31,21 @@ export class Board {
       default:
         break;
     }
+    console.dir(this.zeroRow);
+    console.dir(this.zeroColumn);
   }
   moveNeighbour (num) {
-    if (this.left !== undefined && this.left == num) {
+    if (this.zeroColumn + 1 <= this.size && this[this.zeroRow][this.zeroColumn + 1] == num) {
       this.move("left");
       return num;
-    } else if ( this.right !== undefined && this.right == num ) {
-      this.move( "right" );
+    } else if (this.zeroColumn - 1 >= 0 && this[this.zeroRow][this.zeroColumn - 1] == num) {
+      this.move("right");
       return num;
-    } else if ( this.down !== undefined && this.down == num ) {
-      this.move( "down" );
+    } else if (this.zeroRow + 1 <= this.size && this[this.zeroRow + 1][this.zeroColumn] == num) {
+      this.move("down");
       return num;
-    } else if (this.up !== undefined && this.up == num) {
-      this.move( "up" );
+    } else if (this.zeroRow - 1 >= 0 && this[this.zeroRow - 1][this.zeroColumn] == num) {
+      this.move("up");
       return num;
     } else {
       return "Incorrect tile number";
