@@ -49,6 +49,10 @@ body footer p, body footer span {
   visibility: hidden;
 }
 
+[data-solved=false] {
+  background: lightgoldenrodyellow;
+}
+
 [data-solved=true] {
   background: palegreen !important;
 }

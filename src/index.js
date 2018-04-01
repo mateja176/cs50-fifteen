@@ -71,6 +71,8 @@ const solutionCheck = () => {
     const html = Number( div.innerHTML );
     if ((html + ordinal) === biggest && ordinal !== 15) {
       div.setAttribute( "data-solved", "true" );
+    } else {
+      div.setAttribute("data-solved", "false");
     }
   } );
 };

@@ -49,6 +49,10 @@ body {
   visibility: hidden;
 }
 
+[data-solved = "false"] {
+  background: lightgoldenrodyellow;
+}
+
 [data-solved = "true"] {
   background: palegreen !important;
 }
